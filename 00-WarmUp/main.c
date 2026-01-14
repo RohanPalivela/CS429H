@@ -363,9 +363,10 @@ int main() {
 		printf("Elevator %d wait for elevator: %ld\n", i, elevators[i]->total_wait_for_elev);
 		total_wait_for += elevators[i]->total_wait_for_elev;
 		printf("Elevator %d total off: %ld\n\n", i, elevators[i]->people_off);
-		tot_off = elevators[i]->people_off;
+		tot_off += elevators[i]->people_off;
 	}
-	printf("Average distance traveled: %ld\n", distance_traveled_tot / tot_off);
+	printf("Average distance traveled: %ld\n", distance_traveled_tot / 8);
 	printf("Average wait in elevator: %ld\n", total_wait_in / tot_off);
 	printf("Average wait for elevator: %ld\n", total_wait_for / tot_off);
+	printf("Total guests off elevator: %ld\n", tot_off);
 }
